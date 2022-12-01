@@ -1,0 +1,79 @@
+@use "../styles/global/global";
+@use "../styles/navbar/navbar";
+@use "../styles/footer/footer";
+@import "../styles/global/variables";
+
+.contact {
+    .contact-heading {
+        font-family: $secondary-font;
+    }
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 2rem 0 0 0;
+        column-gap: 2rem;
+        row-gap: 4rem;
+
+        .contact-image {
+            position: relative;
+            .contact-text {
+                position: absolute;
+                font-weight: bold;
+                background: rgb(16, 16, 16);
+                width: 100%;
+                display: grid;
+                place-items: center;
+                height: 45px;
+                bottom: 0;
+            }
+            img {
+                border-radius: 4px;
+                filter: grayscale(55%);
+                object-fit: cover;
+            }
+        }
+    }
+
+    .contact-form {
+        width: 100%;
+
+        .contact-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 0.88rem;
+
+            .form-submit {
+                display: grid;
+                place-items: center;
+                margin: 1rem 0;
+
+                button {
+                    background: rgb(226, 226, 226);
+                    transition: background 0.3s ease-in-out;
+
+                    &:hover {
+                        background: rgb(239, 238, 238);
+                    }
+                }
+            }
+        }
+    }
+    .input-fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        .input-field {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .contact {
+        .contact-grid {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            row-gap: 2rem;
+        }
+    }
+}

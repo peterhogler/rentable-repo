@@ -1,0 +1,99 @@
+@use "../styles/global/global";
+@use "../styles/navbar/navbar";
+@use "../styles/footer/footer";
+@import "../styles/global/variables";
+
+.references {
+    width: 100%;
+
+    .reference-heading {
+        color: #f4f4f4;
+        font-family: $secondary-font;
+    }
+    .references-grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 4rem;
+        padding: 2rem 0 0 0;
+        margin: 0 0 4rem 0;
+
+        .reference {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+
+            .reference-image {
+                flex: 1;
+                height: 185px;
+                img {
+                    filter: grayscale(40%) brightness(90%);
+                    border-radius: 3px;
+                    object-fit: cover;
+                }
+            }
+
+            .reference-company {
+                margin: 1rem 0 0 0;
+            }
+
+            .reference-text {
+                flex: 1;
+
+                h2 {
+                    font-size: 1.2rem;
+                }
+
+                .reference-rating {
+                    color: #ffd700;
+                    display: flex;
+                    align-items: center;
+                    margin: 0.3rem 0 0 0;
+
+                    span {
+                        margin: 0 0 0 0.3rem;
+                    }
+                }
+
+                .reference-paragraph {
+                    margin: 1rem 0 0 0;
+                }
+            }
+
+            .reference-link {
+                margin: 1.2rem 0 0 0;
+                text-decoration: underline;
+                text-underline-offset: 0.4rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .references {
+        .references-grid {
+            padding: 0 0 4rem 0;
+            gap: 1.5rem;
+            margin: unset;
+        }
+    }
+
+    .reference {
+        flex-direction: column;
+        padding: 1rem 0;
+
+        .reference-text {
+            .reference-link {
+                display: grid;
+                place-items: center;
+
+                a {
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+        .reference-image {
+            max-height: 200px;
+        }
+    }
+}

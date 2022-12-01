@@ -1,0 +1,62 @@
+@import "../global/variables.scss";
+
+footer {
+    margin-top: auto;
+    background-color: $footer-background-color;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
+}
+
+.footer-company {
+    .footer-logo {
+        font-size: 1.44rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        font-family: $secondary-font;
+    }
+
+    p {
+        margin-top: 1rem;
+    }
+}
+
+.footer-information {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.footer-links {
+    color: #f4f4f4;
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+
+        li {
+            a {
+                text-decoration: underline;
+                text-underline-offset: 0.4rem;
+            }
+        }
+    }
+}
+
+.footer-heading {
+    margin-top: 0.27rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #f4f4f4;
+    font-family: $secondary-font;
+}
+
+@media screen and (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}

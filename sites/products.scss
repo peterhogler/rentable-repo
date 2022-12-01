@@ -1,0 +1,86 @@
+@use "../styles/global/global";
+@use "../styles/navbar/navbar";
+@use "../styles/footer/footer";
+@import "../styles/global/variables";
+
+.products {
+    .products-title {
+        margin: 0 0 1rem 0;
+        color: #f4f4f4;
+        font-family: $secondary-font;
+    }
+
+    .apartments-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+        padding: 1.3rem 0 5rem 0;
+
+        .apartment-card {
+            .apartment-image {
+                object-fit: cover;
+
+                img {
+                    border-radius: 3px;
+                    filter: grayscale(35%);
+                }
+            }
+
+            .apartment-heading {
+                font-size: 1.2rem;
+                margin: 0.7rem 0 0 0;
+            }
+
+            .apartment-rating {
+                display: flex;
+                align-items: center;
+                color: #ffd700;
+                margin: 0.3rem 0;
+
+                span {
+                    margin: 0 0 0 0.3rem;
+                }
+            }
+
+            .apartment-pricing {
+                color: #ffd700;
+                margin: 0.3rem 0;
+            }
+
+            .apartment-text {
+                margin: 1rem 0;
+            }
+
+            a {
+                text-decoration: underline;
+                text-underline-offset: 0.4rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 845px) {
+    .products {
+        .apartment-link {
+            display: grid;
+            place-items: center;
+            margin: 1.4rem 0 0 0;
+        }
+        .apartments-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .products {
+        .apartment-link {
+            display: grid;
+            place-items: center;
+            margin: 1.4rem 0 0 0;
+        }
+        .apartments-grid {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+    }
+}

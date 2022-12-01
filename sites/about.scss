@@ -1,0 +1,147 @@
+@use "../styles/global/global";
+@use "../styles/navbar/navbar";
+@use "../styles/footer/footer";
+@import "../styles/global/variables";
+
+.about-us {
+    width: 100%;
+
+    .about-heading {
+        color: #f4f4f4;
+        font-family: $secondary-font;
+    }
+
+    .employee-heading {
+        color: #f4f4f4;
+        font-family: $secondary-font;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        place-items: center;
+        gap: 1rem;
+        padding: 2.5rem 0 0 0;
+
+        .about-text {
+            p:first-child {
+                margin: 1rem 0 0 0;
+            }
+            p {
+                font-size: 1.05rem;
+            }
+
+            p:nth-of-type(2) {
+                margin: 1.5rem 0;
+            }
+        }
+
+        .about-image {
+            height: 250px;
+            width: 100%;
+
+            img {
+                border-radius: 3px;
+                filter: grayscale(40%);
+                box-shadow: rgba(189, 189, 192, 0.1) 0px 7px 29px 0px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.employee-heading {
+    padding: 4rem 0;
+}
+
+.employees-grid {
+    width: 100%;
+    padding: 0 0 6rem 0;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 2rem;
+    row-gap: 10rem;
+    margin: 0 0 6rem 0;
+    .employee-card {
+        height: 200px;
+        h2 {
+            margin: 0.7rem 0 0 0;
+            font-size: 1.28rem;
+            color: #f4f4f4;
+        }
+
+        h3 {
+            margin: 0.25rem 0;
+            font-size: 1.1rem;
+        }
+
+        p:first-of-type {
+            margin: 0.22rem 0;
+            color: #f4f4f4;
+        }
+
+        img {
+            border-radius: 2px;
+            object-fit: cover;
+            filter: grayscale(25%) brightness(85%);
+            box-shadow: rgba(189, 189, 192, 0.1) 0px 7px 29px 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about-us {
+        .about-content {
+            display: flex;
+            flex-direction: column-reverse;
+            margin-top: 1rem;
+        }
+    }
+
+    .employees-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        row-gap: 7rem;
+        margin: 0 0 2rem 0;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1080px) {
+    .about-us {
+        .about-content {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 4rem;
+        }
+
+        img {
+            margin-top: 2rem;
+            height: 250px;
+        }
+
+        .employee-heading {
+            padding: 5rem 0 3rem 0;
+        }
+    }
+
+    .employees-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 8rem;
+
+        .employee-card {
+            height: 250px;
+        }
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-text {
+        padding: 2rem;
+
+        p {
+            max-width: 660px;
+        }
+    }
+}

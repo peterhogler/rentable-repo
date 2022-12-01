@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Fira+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Fira+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Fira+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Fira+Sans:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: "Karla", sans-serif, serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #fbfbfb;
+  background: #0e1017;
+}
+
+p {
+  opacity: 0.95;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+a:hover {
+  opacity: 0.8;
+}
+
+li {
+  list-style-type: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  background: rgb(226, 226, 226);
+}
+
+textarea {
+  width: 100%;
+  border-radius: 3px;
+  outline: none;
+  font-family: inherit;
+  padding: 5px;
+  border: none;
+  background: rgb(226, 226, 226);
+}
+
+button {
+  padding: 0.43rem 2.5rem;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fit;
+     object-fit: fit;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.secondary-font {
+  font-family: "Karla", sans-serif, serif;
+}
+
+.hamburger-button {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger-button {
+    display: block;
+  }
+  .container {
+    padding: 1rem 1.2rem;
+  }
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+nav .nav-logo {
+  z-index: 99;
+  font-family: "Karla", sans-serif;
+}
+nav .nav-logo a {
+  font-size: 1.44rem;
+}
+nav .nav-menu {
+  margin-left: auto;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  gap: 2rem;
+  padding-top: 0.5rem;
+}
+nav .nav-menu a {
+  position: relative;
+}
+nav .nav-menu a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -8px;
+  border-radius: 200px;
+  background: #f4f4f4;
+  width: 0%;
+  height: 1.5px;
+  transition: all 0.3s ease;
+}
+nav .nav-menu a:hover::after {
+  width: 100%;
+}
+nav .nav-buttons {
+  z-index: 99;
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+nav .nav-buttons i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+nav .nav-buttons button {
+  color: inherit;
+  outline: none;
+  border: none;
+  background: none;
+  padding: unset;
+}
+
+@media screen and (max-width: 768px) {
+  nav .nav-menu {
+    z-index: 10;
+    opacity: 0;
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 6rem 0 4rem 0;
+    background: #0e1017;
+    transition: opacity 0.8s ease;
+  }
+  nav .nav-menu a {
+    text-decoration: underline;
+    text-underline-offset: 0.6rem;
+  }
+  nav .nav-menu a::after {
+    display: none;
+  }
+  nav .is-open {
+    display: flex;
+    opacity: 100%;
+  }
+  nav .is-hidden {
+    display: none;
+  }
+  nav .nav-buttons {
+    display: flex;
+    margin-left: auto;
+  }
+}
+footer {
+  margin-top: auto;
+  background-color: #0f121d;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+.footer-company .footer-logo {
+  font-size: 1.44rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: "Karla", sans-serif;
+}
+.footer-company p {
+  margin-top: 1rem;
+}
+
+.footer-information {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.footer-links {
+  color: #f4f4f4;
+}
+.footer-links ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.footer-links ul li a {
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+}
+
+.footer-heading {
+  margin-top: 0.27rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #f4f4f4;
+  font-family: "Karla", sans-serif;
+}
+
+@media screen and (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+.references {
+  width: 100%;
+}
+.references .reference-heading {
+  color: #f4f4f4;
+  font-family: "Karla", sans-serif;
+}
+.references .references-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 4rem;
+  padding: 2rem 0 0 0;
+  margin: 0 0 4rem 0;
+}
+.references .references-grid .reference {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.references .references-grid .reference .reference-image {
+  flex: 1;
+  height: 185px;
+}
+.references .references-grid .reference .reference-image img {
+  filter: grayscale(40%) brightness(90%);
+  border-radius: 3px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.references .references-grid .reference .reference-company {
+  margin: 1rem 0 0 0;
+}
+.references .references-grid .reference .reference-text {
+  flex: 1;
+}
+.references .references-grid .reference .reference-text h2 {
+  font-size: 1.2rem;
+}
+.references .references-grid .reference .reference-text .reference-rating {
+  color: #ffd700;
+  display: flex;
+  align-items: center;
+  margin: 0.3rem 0 0 0;
+}
+.references .references-grid .reference .reference-text .reference-rating span {
+  margin: 0 0 0 0.3rem;
+}
+.references .references-grid .reference .reference-text .reference-paragraph {
+  margin: 1rem 0 0 0;
+}
+.references .references-grid .reference .reference-link {
+  margin: 1.2rem 0 0 0;
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+}
+
+@media screen and (max-width: 765px) {
+  .references .references-grid {
+    padding: 0 0 4rem 0;
+    gap: 1.5rem;
+    margin: unset;
+  }
+  .reference {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  .reference .reference-text .reference-link {
+    display: grid;
+    place-items: center;
+  }
+  .reference .reference-text .reference-link a {
+    margin-top: 1rem;
+  }
+  .reference .reference-image {
+    max-height: 200px;
+  }
+}/*# sourceMappingURL=references.css.map */

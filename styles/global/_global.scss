@@ -1,0 +1,128 @@
+@import "../global/variables.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-family: $primary-font, serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: $primary-text-color;
+    background: $primary-background-color;
+}
+
+p {
+    opacity: 0.95;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+li {
+    list-style-type: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 6px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    background: rgb(226, 226, 226);
+}
+
+textarea {
+    width: 100%;
+    border-radius: 3px;
+    outline: none;
+    font-family: inherit;
+    padding: 5px;
+    border: none;
+    background: rgb(226, 226, 226);
+}
+
+button {
+    padding: 0.43rem 2.5rem;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-weight: 700;
+    border-radius: 0.4rem;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: fit;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.section-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.secondary-font {
+    font-family: $secondary-font, serif;
+}
+
+.hamburger-button {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger-button {
+        display: block;
+    }
+
+    .container {
+        padding: 1rem 1.2rem;
+    }
+}

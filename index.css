@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Fira+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Fira+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Fira+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Fira+Sans:wght@400;500;600;700&display=swap");
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+nav .nav-logo {
+  z-index: 99;
+  font-family: "Karla", sans-serif;
+}
+nav .nav-logo a {
+  font-size: 1.44rem;
+}
+nav .nav-menu {
+  margin-left: auto;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  gap: 2rem;
+  padding-top: 0.5rem;
+}
+nav .nav-menu a {
+  position: relative;
+}
+nav .nav-menu a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -8px;
+  border-radius: 200px;
+  background: #f4f4f4;
+  width: 0%;
+  height: 1.5px;
+  transition: all 0.3s ease;
+}
+nav .nav-menu a:hover::after {
+  width: 100%;
+}
+nav .nav-buttons {
+  z-index: 99;
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+nav .nav-buttons i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+nav .nav-buttons button {
+  color: inherit;
+  outline: none;
+  border: none;
+  background: none;
+  padding: unset;
+}
+
+@media screen and (max-width: 768px) {
+  nav .nav-menu {
+    z-index: 10;
+    opacity: 0;
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 6rem 0 4rem 0;
+    background: #0e1017;
+    transition: opacity 0.8s ease;
+  }
+  nav .nav-menu a {
+    text-decoration: underline;
+    text-underline-offset: 0.6rem;
+  }
+  nav .nav-menu a::after {
+    display: none;
+  }
+  nav .is-open {
+    display: flex;
+    opacity: 100%;
+  }
+  nav .is-hidden {
+    display: none;
+  }
+  nav .nav-buttons {
+    display: flex;
+    margin-left: auto;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: "Karla", sans-serif, serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #fbfbfb;
+  background: #0e1017;
+}
+
+p {
+  opacity: 0.95;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+a:hover {
+  opacity: 0.8;
+}
+
+li {
+  list-style-type: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  background: rgb(226, 226, 226);
+}
+
+textarea {
+  width: 100%;
+  border-radius: 3px;
+  outline: none;
+  font-family: inherit;
+  padding: 5px;
+  border: none;
+  background: rgb(226, 226, 226);
+}
+
+button {
+  padding: 0.43rem 2.5rem;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fit;
+     object-fit: fit;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.secondary-font {
+  font-family: "Karla", sans-serif, serif;
+}
+
+.hamburger-button {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger-button {
+    display: block;
+  }
+  .container {
+    padding: 1rem 1.2rem;
+  }
+}
+footer {
+  margin-top: auto;
+  background-color: #0f121d;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+.footer-company .footer-logo {
+  font-size: 1.44rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: "Karla", sans-serif;
+}
+.footer-company p {
+  margin-top: 1rem;
+}
+
+.footer-information {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.footer-links {
+  color: #f4f4f4;
+}
+.footer-links ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.footer-links ul li a {
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+}
+
+.footer-heading {
+  margin-top: 0.27rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #f4f4f4;
+  font-family: "Karla", sans-serif;
+}
+
+@media screen and (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+header {
+  position: relative;
+  height: 48vh;
+  width: 100%;
+}
+header video {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -2;
+}
+header .header-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(37, 62, 88, 0.4) 0%, rgba(51, 59, 76, 0.3) 100%), rgba(87, 36, 36, 0.2);
+}
+header .header-text {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  padding: 3rem;
+}
+header .header-text h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  color: #f4f4f4;
+  font-family: "Karla", sans-serif;
+}
+header .header-text h2 {
+  font-size: 1.6rem;
+  margin-block: 0.5rem;
+}
+header .header-text button {
+  color: #f4f4f4;
+  font-size: 1.3rem;
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0);
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+  transition: all 0.3s ease;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.5fr) minmax(0, 1fr);
+  gap: 1rem;
+}
+.home-grid .home-text {
+  font-size: 1rem;
+  display: grid;
+  place-items: center;
+}
+.home-grid .home-text .home-heading {
+  color: #f4f4f4;
+  font-family: "Karla", sans-serif;
+}
+.home-grid .home-text .home-paragraph {
+  padding: 1.5rem 0;
+}
+.home-grid .home-text a {
+  margin: 0.4rem 0 0 0;
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+}
+.home-grid .home-images {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  border-radius: 5px;
+}
+.home-grid .home-images img {
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 4px;
+  filter: brightness(66%);
+  box-shadow: rgba(138, 138, 138, 0.1) 0px 4px 12px;
+  transition: transform 0.155s ease;
+}
+.home-grid .home-images img:hover {
+  transform: scale(1.05);
+}
+.home-grid .home-images .home-image {
+  position: relative;
+}
+.home-grid .home-images .home-image h3 {
+  position: absolute;
+  text-align: center;
+  color: #f4f4f4;
+  width: 100%;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    height: 65vh;
+  }
+  .header-text h1 {
+    font-size: 2rem;
+  }
+  .header-text h2 {
+    font-size: 1.8rem;
+  }
+  .header-text button {
+    font-size: 1.6rem;
+  }
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-grid .home-text {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0.5rem 0 2rem 0;
+  }
+  .home-grid .home-text a {
+    margin: 1.5rem 0 0 0;
+  }
+  .home-grid .home-text h1 {
+    text-align: left;
+  }
+  .home-grid .home-text p {
+    text-align: left;
+    padding: 2rem 0;
+  }
+  .home-grid .home-images {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .section-wrapper {
+    padding: 2rem 2rem;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1176px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-text {
+    padding: 2rem;
+    background-repeat: no-repeat;
+  }
+  .home-text .home-heading {
+    white-space: nowrap;
+  }
+  .home-text p {
+    max-width: 660px;
+  }
+}/*# sourceMappingURL=index.css.map */

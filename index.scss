@@ -1,0 +1,194 @@
+@use "styles/navbar/navbar";
+@use "styles/global/global";
+@use "styles/footer/footer";
+@import "styles/global/variables.scss";
+
+header {
+    position: relative;
+    height: 48vh;
+    width: 100%;
+
+    video {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
+
+    .header-video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(37, 62, 88, 0.4) 0%, rgba(51, 59, 76, 0.3) 100%),
+            rgba(87, 36, 36, 0.2);
+    }
+
+    .header-text {
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        padding: 3rem;
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+            color: #f4f4f4;
+            font-family: $secondary-font;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-block: 0.5rem;
+        }
+
+        button {
+            color: #f4f4f4;
+            font-size: 1.3rem;
+
+            background: none;
+            border: 2px solid rgba(255, 255, 255, 0);
+            text-decoration: underline;
+            text-underline-offset: 0.4rem;
+
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.5fr) minmax(0, 1fr);
+    gap: 1rem;
+
+    .home-text {
+        font-size: 1rem;
+        display: grid;
+        place-items: center;
+
+        .home-heading {
+            color: #f4f4f4;
+            font-family: $secondary-font;
+        }
+
+        .home-paragraph {
+            padding: 1.5rem 0;
+        }
+
+        a {
+            margin: 0.4rem 0 0 0;
+            text-decoration: underline;
+            text-underline-offset: 0.4rem;
+        }
+    }
+
+    .home-images {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+        border-radius: 5px;
+
+        img {
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 4px;
+            filter: brightness(66%);
+            box-shadow: rgba(138, 138, 138, 0.1) 0px 4px 12px;
+            transition: transform 0.155s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        .home-image {
+            position: relative;
+
+            h3 {
+                position: absolute;
+                text-align: center;
+                color: #f4f4f4;
+                width: 100%;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        height: 65vh;
+    }
+
+    .header-text {
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        button {
+            font-size: 1.6rem;
+        }
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr;
+
+        .home-text {
+            text-align: center;
+            font-size: 1.1rem;
+            padding: 0.5rem 0 2rem 0;
+
+            a {
+                margin: 1.5rem 0 0 0;
+            }
+
+            h1 {
+                text-align: left;
+            }
+
+            p {
+                text-align: left;
+                padding: 2rem 0;
+            }
+        }
+
+        .home-images {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+    }
+
+    .section-wrapper {
+        padding: 2rem 2rem;
+    }
+}
+
+// create an ipad media query
+@media screen and (min-width: 600px) and (max-width: 1176px) {
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-text {
+        padding: 2rem;
+        background-repeat: no-repeat;
+        .home-heading {
+            white-space: nowrap;
+        }
+        p {
+            max-width: 660px;
+        }
+    }
+}
