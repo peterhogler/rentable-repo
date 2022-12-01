@@ -315,7 +315,7 @@ header .header-text h2 {
   font-size: 1.6rem;
   margin-block: 0.5rem;
 }
-header .header-text button {
+header .header-text a {
   color: #f4f4f4;
   font-size: 1.3rem;
   background: none;
